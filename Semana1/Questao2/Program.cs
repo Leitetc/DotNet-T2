@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Questão 02. Tipos de Dados: Quais são os tipos de dados numéricos inteiros disponíveis no .NET?");
-Console.WriteLine("Dê exemplos de uso para cada um deles através de exemplos.");
+Console.WriteLine("Questão 02. Tipos de Dados:");
 
 /*
 sbyte armazena valores de -128 a 127
