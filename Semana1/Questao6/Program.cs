@@ -11,4 +11,3 @@ else
 {
     Console.WriteLine("As strings são diferentes");
 }
-Console.WriteLine();

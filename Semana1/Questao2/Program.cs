@@ -45,4 +45,3 @@ Console.WriteLine("O valor máximo de um long é: " + maxlo);
 Console.WriteLine("O valor mínimo de um long é: " + minlo);
 Console.WriteLine("O valor máximo de um ulong é: " + maxul);
 Console.WriteLine("O valor mínimo de um ulong é: " + minul);
-Console.WriteLine();
