@@ -21,6 +21,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Questao7", "Semana1\Questao
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Questao8", "Semana1\Questao8\Questao8.csproj", "{9275861C-AF0B-471A-A5DC-36102E6AC597}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Semana2", "Semana2", "{E5844BB0-0DB1-416A-A243-FDA094BC47B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo_aula_2", "Semana2\Exemplo_aula_2\Exemplo_aula_2.csproj", "{44D69549-B5C3-48CC-A3FF-B3C777127392}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +63,10 @@ Global
 		{9275861C-AF0B-471A-A5DC-36102E6AC597}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9275861C-AF0B-471A-A5DC-36102E6AC597}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9275861C-AF0B-471A-A5DC-36102E6AC597}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D69549-B5C3-48CC-A3FF-B3C777127392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D69549-B5C3-48CC-A3FF-B3C777127392}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D69549-B5C3-48CC-A3FF-B3C777127392}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D69549-B5C3-48CC-A3FF-B3C777127392}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +80,7 @@ Global
 		{4D232D91-0BB9-4099-8BCD-744A7DE0DBB5} = {0F259A14-8C05-4A35-A877-702E78A4879C}
 		{35D54E1E-F6ED-45E7-B092-D5BDF828A486} = {0F259A14-8C05-4A35-A877-702E78A4879C}
 		{9275861C-AF0B-471A-A5DC-36102E6AC597} = {0F259A14-8C05-4A35-A877-702E78A4879C}
+		{44D69549-B5C3-48CC-A3FF-B3C777127392} = {E5844BB0-0DB1-416A-A243-FDA094BC47B9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A9E6394-3D58-4D61-869E-A135412C8414}
