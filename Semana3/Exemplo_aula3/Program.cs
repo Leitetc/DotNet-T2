@@ -47,12 +47,6 @@ Console.WriteLine($"{CalcAge("Thiago", new DateTime(1993, 08, 02))}");
 
 Console.WriteLine("Exemplo Tuplas");
 
-/* Conseitos Lambda !
-
-1 - 
-
-*/
-
 #region Lambda
 
 Func<int, int, int> sum = (x, y) => x + y;
@@ -75,5 +69,26 @@ string[] people = { "Helder", "Nicole", "Gilvana" };
 char letter = 'H';
 Console.WriteLine($"All People: {string.Join(", ", people)}");
 Console.WriteLine($"People with name started with '{letter}':{string.Join(", ", people.Where(x => x.StartsWith(letter)))}");
+
+#endregion 
+
+#region Linq
+
+List<int> listling = new() { 1, 2, 3, 4, 5 };
+var squaredList = listling.Select(x => x * x);
+Console.WriteLine($"Original List: {string.Join(", ", list)}");
+Console.WriteLine($"Squared  List: {string.Join(", ", squaredList)}");
+// Original List: 1, 2, 3, 4, 5
+// Squared  List: 1, 4, 9, 16, 25
+var summedList = listling.Select((x,index) => x + squaredList.ElementAt(index));
+Console.WriteLine($"Summed   List: {string.Join(", ", summedList)}");
+// Summed   List: 2, 6, 12, 20, 30
+
+var listMultipleOfThree = listling.Where(x => x % 3 == 0).ToList();
+listMultipleOfThree.AddRange(squaredList.Where(x => x % 3 == 0).ToList());
+listMultipleOfThree.AddRange(summedList.Where(x => x % 3 == 0).ToList());
+Console.WriteLine($"List Multiple of Three: {string.Join(", ", listMultipleOfThree)}");
+// List Multiple of Three: 3, 9, 6, 12, 30
+Console.WriteLine($"List Multiple of Three: {string.Join(", ", listMultipleOfThree.Order())}");
 
 #endregion 
