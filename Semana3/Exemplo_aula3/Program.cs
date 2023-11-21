@@ -44,3 +44,41 @@ Console.WriteLine($"{CalcAge("Thiago", new DateTime(1993, 08, 02))}");
 }
 
 #endregion
+
+Console.WriteLine("Exemplo Tuplas");
+
+/* Conseitos Lambda !
+
+1 - Agrupar valores de dados leves
+2 - (int, string) Keyvalor=("   ", "   ");
+3 -  dois ponteiros com o mesmo nome
+
+*/
+
+#region Lambda
+
+Func<int, int, int> sum = (x, y) => x + y;
+Console.WriteLine($"Sum: {sum(10, 20)}");
+// Sum: 30
+
+Action<string> greet = name =>
+{
+   string greeting = $"Hello {name}!";
+   Console.WriteLine(greeting);
+};
+string person = Console.ReadLine() ?? "";
+greet(person);
+// Hello `person or Someone`
+// ?? and ??= are null-coalescing operators, 
+//    which return the left-hand operand if the operand is not null; 
+//    otherwise, they return the right operand.
+
+Func<string, int, string> isBiggerThan = (string s, int x) => s.Length > x ? "Yes" : "No";
+var size = 5;
+Console.WriteLine($"The text {person} has more than {size} chars? {isBiggerThan(person, size)}");
+
+string[] people = { "Helder", "Nicole", "Gilvana" };
+char letter = 'N';
+Console.WriteLine($"People with name started with '{letter}': {string.Join(", ", people.Where(x => x.StartsWith(letter)))}");
+
+#endregion 
