@@ -94,3 +94,36 @@ Console.WriteLine($"List Multiple of Three: {string.Join(", ", listMultipleOfThr
 Console.WriteLine($"List Multiple of Three: {string.Join(", ", listMultipleOfThree.Order())}");
 
 #endregion 
+
+#region Exception
+
+try{
+// code that may throw ab exception
+     int result = Divide(10, 0);
+     Console.WriteLine($"Result: {result}");
+}
+catch (DivideByZeroException ex){
+     //Handle the specific exception
+     Console.WriteLine("Erro: Cannot divide by zero");
+     Console.WriteLine(ex.Message);
+}
+catch(Exception ex){
+   //Handle any other exeptions
+   Console.WriteLine("An error occurred");
+   Console.WriteLine(ex.Message);
+}
+finally{
+   //code that will always execute, regarddless of whether an exception ocurred or not
+   Console.WriteLine("Finally block executed");
+   
+}   
+
+int Divide(int a, int b){
+   if(b==0){
+      //throw a custom exception
+      throw new DivideByZeroException("cannot divide by zero");
+   }
+   return a / b;
+}
+
+#endregion
