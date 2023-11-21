@@ -68,10 +68,6 @@ Action<string> greet = name =>
 };
 string person = Console.ReadLine() ?? "";
 greet(person);
-// Hello `person or Someone`
-// ?? and ??= are null-coalescing operators, 
-//    which return the left-hand operand if the operand is not null; 
-//    otherwise, they return the right operand.
 
 Func<string, int, string> isBiggerThan = (string s, int x) => s.Length > x ? "Yes" : "No";
 var size = 5;
