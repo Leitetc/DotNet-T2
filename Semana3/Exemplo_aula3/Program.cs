@@ -49,9 +49,7 @@ Console.WriteLine("Exemplo Tuplas");
 
 /* Conseitos Lambda !
 
-1 - Agrupar valores de dados leves
-2 - (int, string) Keyvalor=("   ", "   ");
-3 -  dois ponteiros com o mesmo nome
+1 - 
 
 */
 
@@ -74,7 +72,8 @@ var size = 5;
 Console.WriteLine($"The text {person} has more than {size} chars? {isBiggerThan(person, size)}");
 
 string[] people = { "Helder", "Nicole", "Gilvana" };
-char letter = 'N';
-Console.WriteLine($"People with name started with '{letter}': {string.Join(", ", people.Where(x => x.StartsWith(letter)))}");
+char letter = 'H';
+Console.WriteLine($"All People: {string.Join(", ", people)}");
+Console.WriteLine($"People with name started with '{letter}':{string.Join(", ", people.Where(x => x.StartsWith(letter)))}");
 
 #endregion 
