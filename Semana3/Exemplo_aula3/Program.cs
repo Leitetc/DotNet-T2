@@ -72,7 +72,9 @@ Console.WriteLine($"People with name started with '{letter}':{string.Join(", ", 
 
 #endregion 
 
-#region Linq
+/*breakpointI bolinha vermelha
+vai executar ate esse ponto */
+#region Linq 
 
 List<int> listling = new() { 1, 2, 3, 4, 5 };
 var squaredList = listling.Select(x => x * x);
