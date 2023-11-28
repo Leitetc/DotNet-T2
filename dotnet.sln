@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Semana4", "Semana4", "{16F1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prova_Individual", "Semana4\Prova_Individual\Prova_Individual.csproj", "{A5AA537E-2C06-48A7-A696-03D139752F69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exemplo_aula4", "Semana4\Exemplo_aula4\Exemplo_aula4.csproj", "{368D1847-FB1A-4F7C-9B58-50964E8C2904}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,10 @@ Global
 		{A5AA537E-2C06-48A7-A696-03D139752F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5AA537E-2C06-48A7-A696-03D139752F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5AA537E-2C06-48A7-A696-03D139752F69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{368D1847-FB1A-4F7C-9B58-50964E8C2904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{368D1847-FB1A-4F7C-9B58-50964E8C2904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{368D1847-FB1A-4F7C-9B58-50964E8C2904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{368D1847-FB1A-4F7C-9B58-50964E8C2904}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,6 +126,7 @@ Global
 		{E3B19C51-EEFF-4E5D-A6B2-91B81CF7A4C8} = {3E26B1D9-DA71-44EA-B7DA-87F3DB53EAB9}
 		{384B71C1-B4DD-4448-92FE-F52D6353AA66} = {3E26B1D9-DA71-44EA-B7DA-87F3DB53EAB9}
 		{A5AA537E-2C06-48A7-A696-03D139752F69} = {16F13CA3-199E-46DF-8F6E-3AEC0F1EA6AC}
+		{368D1847-FB1A-4F7C-9B58-50964E8C2904} = {16F13CA3-199E-46DF-8F6E-3AEC0F1EA6AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A9E6394-3D58-4D61-869E-A135412C8414}
