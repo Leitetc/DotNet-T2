@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 class Pessoa
 {
@@ -12,6 +13,22 @@ class Pessoa
         Nome = nome;
         DataNascimento = dataNascimento;
         CPF = cpf;
+    }
+
+    public int Idade
+    {
+        get
+        {
+            DateTime now = DateTime.Now;
+            int idade = now.Year - DataNascimento.Year;
+
+            if (now.Month < DataNascimento.Month || (now.Month == DataNascimento.Month && now.Day < DataNascimento.Day))
+            {
+                idade--;
+            }
+
+            return idade;
+        }
     }
 }
 
@@ -77,15 +94,29 @@ class Academia
             Console.WriteLine($"Nome: {cliente.Nome}, CPF: {cliente.CPF}, Altura: {cliente.Altura}, Peso: {cliente.Peso}");
         }
     }
+
+    public void RelatorioInstrutoresPorIdade(int idadeMinima, int idadeMaxima)
+    {
+        var instrutoresFiltrados = Instrutores
+            .Where(instrutor => instrutor.Idade >= idadeMinima && instrutor.Idade <= idadeMaxima)
+            .ToList();
+
+        Console.WriteLine($"Instrutores com idade entre {idadeMinima} e {idadeMaxima} anos:");
+        foreach (var instrutor in instrutoresFiltrados)
+        {
+            Console.WriteLine($"Nome: {instrutor.Nome}, Idade: {instrutor.Idade} anos, CREF: {instrutor.CREF}");
+        }
+    }
 }
 
 class Program
 {
     static void Main()
     {
+        // Exemplo de uso:
         Academia academia = new Academia();
 
-        Instrutor instrutor1 = new Instrutor("João", new DateTime(1980, 5, 15), "12345678901", "ABC123");
+        Instrutor instrutor1 = new Instrutor("João", new DateTime(1990, 5, 15), "12345678901", "ABC123");
         Instrutor instrutor2 = new Instrutor("Maria", new DateTime(1990, 8, 25), "98765432109", "XYZ456");
 
         Cliente cliente1 = new Cliente("Carlos", new DateTime(1995, 3, 10), "11122233344", 1.75, 70.5);
@@ -99,5 +130,7 @@ class Program
 
         academia.MostrarListaInstrutores();
         academia.MostrarListaClientes();
+
+        academia.RelatorioInstrutoresPorIdade(25, 40);
     }
 }
