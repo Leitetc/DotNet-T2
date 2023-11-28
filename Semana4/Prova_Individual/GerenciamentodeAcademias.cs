@@ -83,7 +83,6 @@ class Program
 {
     static void Main()
     {
-        // Exemplo de uso:
         Academia academia = new Academia();
 
         Instrutor instrutor1 = new Instrutor("João", new DateTime(1980, 5, 15), "12345678901", "ABC123");
