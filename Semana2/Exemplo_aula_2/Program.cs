@@ -1,5 +1,5 @@
 ﻿﻿
-/* #region Foreach examples
+ #region Foreach examples
 
 string[] people = { "Maria", "João", "José", "Ana" };
 
@@ -8,9 +8,8 @@ foreach(string person in people)
     Console.WriteLine(person);
 }
 #endregion
- */
-
-/* #region Fibonacci
+ 
+#region Fibonacci
 int fib1 = 0;
 int fib2 = 1;
 int fib3;
@@ -27,9 +26,9 @@ while (fib3 <= 100)
     fib2 = fib3;
     fib3 = fib2 + fib1;
 }
- #endregion */
+ #endregion 
 
- /* #region List Example
+#region List Example
 
 // List of integers
 List<int> numbers = new List<int>();
@@ -74,7 +73,7 @@ foreach(List<string> names3 in names2)
       Console.WriteLine(name);
    }
 }
-#endregion */
+#endregion 
 
 #region DateTime examples
 // Get the current date and time
