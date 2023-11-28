@@ -210,7 +210,7 @@ class Program
         Instrutor instrutor2 = new Instrutor("Maria", new DateTime(1990, 8, 25), "98765432109", "XYZ456");
 
         Cliente cliente1 = new Cliente("Carlos", new DateTime(1995, 5, 10), "11122233344", 1.75, 70.5);
-        Cliente cliente2 = new Cliente("Ana", new DateTime(1988, 11, 20), "55566677788", 1.65, 60.0);
+        Cliente cliente2 = new Cliente("Ana", new DateTime(1988, 11, 20), "55566677788", 1.65, 160.0);
 
         academia.AdicionarInstrutor(instrutor1);
         academia.AdicionarInstrutor(instrutor2);
