@@ -84,6 +84,7 @@ class Academia
 
     public void MostrarListaInstrutores()
     {
+        Console.WriteLine("                     ");
         Console.WriteLine("Lista de Instrutores:");
         foreach (var instrutor in Instrutores)
         {
@@ -93,6 +94,7 @@ class Academia
 
     public void MostrarListaClientes()
     {
+        Console.WriteLine("                  ");
         Console.WriteLine("Lista de Clientes:");
         foreach (var cliente in Clientes)
         {
