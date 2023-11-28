@@ -54,6 +54,11 @@ class Cliente : Pessoa
         Altura = altura;
         Peso = peso;
     }
+
+    public double CalcularIMC()
+    {
+        return Peso / (Altura * Altura);
+    }
 }
 
 class Academia
@@ -107,6 +112,82 @@ class Academia
             Console.WriteLine($"Nome: {instrutor.Nome}, Idade: {instrutor.Idade} anos, CREF: {instrutor.CREF}");
         }
     }
+
+    public void RelatorioClientesPorIdade(int idadeMinima, int idadeMaxima)
+    {
+        var clientesFiltrados = Clientes
+            .Where(cliente => cliente.Idade >= idadeMinima && cliente.Idade <= idadeMaxima)
+            .ToList();
+
+        Console.WriteLine($"Clientes com idade entre {idadeMinima} e {idadeMaxima} anos:");
+        foreach (var cliente in clientesFiltrados)
+        {
+            Console.WriteLine($"Nome: {cliente.Nome}, Idade: {cliente.Idade} anos, CPF: {cliente.CPF}");
+        }
+    }
+
+    public void RelatorioClientesPorIMC(double imcLimite)
+    {
+        var clientesFiltrados = Clientes
+            .Where(cliente => cliente.CalcularIMC() > imcLimite)
+            .OrderBy(cliente => cliente.CalcularIMC())
+            .ToList();
+
+        Console.WriteLine($"Clientes com IMC maior que {imcLimite}, em ordem crescente:");
+        foreach (var cliente in clientesFiltrados)
+        {
+            Console.WriteLine($"Nome: {cliente.Nome}, IMC: {cliente.CalcularIMC():F2}");
+        }
+    }
+
+    public void RelatorioClientesOrdemAlfabetica()
+    {
+        var clientesOrdenados = Clientes
+            .OrderBy(cliente => cliente.Nome)
+            .ToList();
+
+        Console.WriteLine("Clientes em ordem alfabética:");
+        foreach (var cliente in clientesOrdenados)
+        {
+            Console.WriteLine($"Nome: {cliente.Nome}, CPF: {cliente.CPF}");
+        }
+    }
+
+    public void RelatorioClientesMaisVelhoParaMaisNovo()
+{
+    var clientesOrdenados = Clientes
+        .OrderBy(cliente => cliente.DataNascimento)
+        .ToList();
+
+    Console.WriteLine("Clientes do mais velho para o mais novo:");
+    foreach (var cliente in clientesOrdenados)
+    {
+        Console.WriteLine($"Nome: {cliente.Nome}, Idade: {cliente.Idade} anos, CPF: {cliente.CPF}");
+    }
+}
+
+    public void RelatorioAniversariantesDoMes(int mes)
+    {
+        var instrutoresAniversariantes = Instrutores
+            .Where(instrutor => instrutor.DataNascimento.Month == mes)
+            .ToList();
+
+        var clientesAniversariantes = Clientes
+            .Where(cliente => cliente.DataNascimento.Month == mes)
+            .ToList();
+
+        Console.WriteLine($"Instrutores e Clientes aniversariantes do mês {mes}:");
+        
+        foreach (var instrutor in instrutoresAniversariantes)
+        {
+            Console.WriteLine($"Instrutor: {instrutor.Nome}, CPF: {instrutor.CPF}, Data de Nascimento: {instrutor.DataNascimento:dd/MM/yyyy}");
+        }
+
+        foreach (var cliente in clientesAniversariantes)
+        {
+            Console.WriteLine($"Cliente: {cliente.Nome}, CPF: {cliente.CPF}, Data de Nascimento: {cliente.DataNascimento:dd/MM/yyyy}");
+        }
+    }
 }
 
 class Program
@@ -116,7 +197,7 @@ class Program
         // Exemplo de uso:
         Academia academia = new Academia();
 
-        Instrutor instrutor1 = new Instrutor("João", new DateTime(1990, 5, 15), "12345678901", "ABC123");
+        Instrutor instrutor1 = new Instrutor("João", new DateTime(1980, 5, 15), "12345678901", "ABC123");
         Instrutor instrutor2 = new Instrutor("Maria", new DateTime(1990, 8, 25), "98765432109", "XYZ456");
 
         Cliente cliente1 = new Cliente("Carlos", new DateTime(1995, 3, 10), "11122233344", 1.75, 70.5);
@@ -132,5 +213,10 @@ class Program
         academia.MostrarListaClientes();
 
         academia.RelatorioInstrutoresPorIdade(25, 40);
+        academia.RelatorioClientesPorIdade(20, 30);
+        academia.RelatorioClientesPorIMC(25.0);
+        academia.RelatorioClientesOrdemAlfabetica();
+        academia.RelatorioClientesMaisVelhoParaMaisNovo();
+        academia.RelatorioAniversariantesDoMes(5);
     }
 }
