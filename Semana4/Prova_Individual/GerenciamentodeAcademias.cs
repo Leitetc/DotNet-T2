@@ -131,7 +131,7 @@ class Academia
         }
     }
 
-    public void RelatorioClientesPorIMC(double imcLimite)
+   public void RelatorioClientesPorIMC(double imcLimite)
 {
     var clientesFiltrados = Clientes
         .Where(cliente => cliente.CalcularIMC() > imcLimite)
