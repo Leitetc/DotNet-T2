@@ -106,6 +106,8 @@ class Academia
             .Where(instrutor => instrutor.Idade >= idadeMinima && instrutor.Idade <= idadeMaxima)
             .ToList();
 
+        Console.WriteLine("                                         ");
+        Console.WriteLine("-----------------------------------------");
         Console.WriteLine($"Instrutores com idade entre {idadeMinima} e {idadeMaxima} anos:");
         foreach (var instrutor in instrutoresFiltrados)
         {
@@ -119,6 +121,7 @@ class Academia
             .Where(cliente => cliente.Idade >= idadeMinima && cliente.Idade <= idadeMaxima)
             .ToList();
 
+        Console.WriteLine("-----------------------------------------");
         Console.WriteLine($"Clientes com idade entre {idadeMinima} e {idadeMaxima} anos:");
         foreach (var cliente in clientesFiltrados)
         {
@@ -127,18 +130,19 @@ class Academia
     }
 
     public void RelatorioClientesPorIMC(double imcLimite)
-    {
-        var clientesFiltrados = Clientes
-            .Where(cliente => cliente.CalcularIMC() > imcLimite)
-            .OrderBy(cliente => cliente.CalcularIMC())
-            .ToList();
+{
+    var clientesFiltrados = Clientes
+        .Where(cliente => cliente.CalcularIMC() > imcLimite)
+        .OrderBy(cliente => cliente.CalcularIMC())
+        .ToList();
 
-        Console.WriteLine($"Clientes com IMC maior que {imcLimite}, em ordem crescente:");
-        foreach (var cliente in clientesFiltrados)
-        {
-            Console.WriteLine($"Nome: {cliente.Nome}, IMC: {cliente.CalcularIMC():F2}");
-        }
+    Console.WriteLine("-----------------------------------------");
+    Console.WriteLine($"Clientes com IMC maior que {imcLimite}, em ordem crescente:");
+    foreach (var cliente in clientesFiltrados)
+    {
+        Console.WriteLine($"Nome: {cliente.Nome}, IMC: {cliente.CalcularIMC():F2}");
     }
+}
 
     public void RelatorioClientesOrdemAlfabetica()
     {
@@ -146,6 +150,7 @@ class Academia
             .OrderBy(cliente => cliente.Nome)
             .ToList();
 
+        Console.WriteLine("-----------------------------------------");
         Console.WriteLine("Clientes em ordem alfabética:");
         foreach (var cliente in clientesOrdenados)
         {
@@ -159,6 +164,7 @@ class Academia
         .OrderBy(cliente => cliente.DataNascimento)
         .ToList();
 
+    Console.WriteLine("-----------------------------------------");
     Console.WriteLine("Clientes do mais velho para o mais novo:");
     foreach (var cliente in clientesOrdenados)
     {
@@ -176,6 +182,7 @@ class Academia
             .Where(cliente => cliente.DataNascimento.Month == mes)
             .ToList();
 
+        Console.WriteLine("-----------------------------------------");
         Console.WriteLine($"Instrutores e Clientes aniversariantes do mês {mes}:");
         
         foreach (var instrutor in instrutoresAniversariantes)
@@ -200,7 +207,7 @@ class Program
         Instrutor instrutor1 = new Instrutor("João", new DateTime(1980, 5, 15), "12345678901", "ABC123");
         Instrutor instrutor2 = new Instrutor("Maria", new DateTime(1990, 8, 25), "98765432109", "XYZ456");
 
-        Cliente cliente1 = new Cliente("Carlos", new DateTime(1995, 3, 10), "11122233344", 1.75, 70.5);
+        Cliente cliente1 = new Cliente("Carlos", new DateTime(1995, 5, 10), "11122233344", 1.75, 70.5);
         Cliente cliente2 = new Cliente("Ana", new DateTime(1988, 11, 20), "55566677788", 1.65, 60.0);
 
         academia.AdicionarInstrutor(instrutor1);
